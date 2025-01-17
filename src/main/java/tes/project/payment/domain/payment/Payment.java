@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Table(name = "payments")
@@ -18,12 +17,17 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userId;
-    private BigDecimal amount;
-    private PaymentStatus status;
+    private Integer orderId;
+    private Integer amount;
+    private String status;
     private LocalDateTime createdAt;
 
-    public Payment(String userId, BigDecimal amount, PaymentStatus status) {
+    public Payment() {
+    }
+
+    public Payment(String userId, Integer orderId, Integer amount, String status) {
         this.userId = userId;
+        this.orderId = orderId;
         this.amount = amount;
         this.status = status;
     }
@@ -33,7 +37,7 @@ public class Payment {
         this.createdAt = LocalDateTime.now();
     }
 
-    public void setStatus(PaymentStatus status) {
-        this.status = PaymentStatus.valueOf(status.name());
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

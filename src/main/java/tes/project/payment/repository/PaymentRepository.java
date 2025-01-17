@@ -5,8 +5,6 @@ import tes.project.payment.domain.payment.Payment;
 
 import java.util.List;
 
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
     List<Payment> findByUserId(String userId);
-
-    List<Payment> findById(Long id);
 }

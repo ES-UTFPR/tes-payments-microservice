@@ -1,5 +1,8 @@
 package tes.project.payment.domain.payment;
 
+import lombok.Getter;
+
+@Getter
 public enum PaymentStatus {
     PENDING("pending"),
     COMPLETED("completed"),
@@ -11,7 +14,4 @@ public enum PaymentStatus {
         this.status = status;
     }
 
-    public String getStatus() {
-        return status;
-    }
 }
