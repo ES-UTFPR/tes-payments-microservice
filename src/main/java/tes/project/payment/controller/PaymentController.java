@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tes.project.payment.domain.payment.Payment;
-import tes.project.payment.domain.payment.PaymentStatus;
 import tes.project.payment.domain.payment.dto.PaymentDTO;
 import tes.project.payment.domain.payment.dto.updateStatusDTO;
 import tes.project.payment.repository.PaymentRepository;
